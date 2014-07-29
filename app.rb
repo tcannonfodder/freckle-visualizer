@@ -9,7 +9,7 @@ require home_dir + '/api_client'
 
 
 get '/' do
-  client = APIClient.new(PERSONAL_ACCESS_TOKEN)
+  client = APIClient.new(PAT)
   entries = client.get_entries
   logger.debug entries
 
