@@ -1,5 +1,5 @@
 require 'rubygems'; require 'bundler'; Bundler.require
-require 'ruby-debug'
+# require 'ruby-debug'
 require "sinatra/reloader" if development?
 require 'json'
 
