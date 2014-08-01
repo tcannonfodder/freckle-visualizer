@@ -16,9 +16,7 @@ class APIClient
     response = request(base_uri(parameters))
 
     # add the entries in this first response to the entries array
-    entries << JSON.parse(response.body)
-
-    puts entries
+    entries += JSON.parse(response.body)
 
     pagination_links = parse_pagination_header(response)
     while pagination_links[:last]
