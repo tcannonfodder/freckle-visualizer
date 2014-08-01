@@ -13,9 +13,71 @@ body
 #header
 {
 	background: #3cc5de;
-	padding:5;
+	padding:25;
 	color:#FFFFFF;
 }
+
+#quick-reports
+{
+	list-style: none;
+	display: inline-block;
+	font-size: 0;
+}
+
+#quick-reports a
+{
+	border-top: 0px solid;
+	border-bottom: 3px solid;
+	border-right: 2px solid;
+		border-radius:0px;
+		border-top-color: #bfbfbf;
+		border-bottom-color: #bfbfbf;
+		border-right-color:#bfbfbf;
+	padding: 8px;
+	background-color:#fdffff;
+	margin-left: 0;
+	font-size: 18px;
+	color:#EA4C7D;
+    text-decoration: none;
+}
+
+#quick-reports a:hover
+{
+    background-color: #dddddd;
+    color: #EA4C7D;
+}
+
+#quick-reports a.active
+{
+    background-color: #EA4C7D;
+    color:#ffffff;
+}
+
+
+#quick-reports a:first-child
+{
+	border-left: 0px solid #bfbfbf;
+		-webkit-border-top-left-radius: 10px;
+		-webkit-border-bottom-left-radius: 10px;
+		-moz-border-radius-topleft: 10px;
+		-moz-border-radius-bottomleft: 10px;
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+	
+}
+
+#quick-reports a:last-child
+{
+	border-right: 0px solid #bfbfbf;
+		-webkit-border-top-right-radius: 10px;
+		-webkit-border-bottom-right-radius: 10px;
+		-moz-border-radius-topright: 10px;
+		-moz-border-radius-bottomright: 10px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+			
+}
+
 
 #hfields
 {

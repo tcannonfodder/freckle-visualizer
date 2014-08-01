@@ -9,14 +9,23 @@
 <body>
 <center>
 	<div id="header">
-			<input type="date" placeholder="Start Date" id="hfields">	
-			<input type="date" placeholder="End Date" id="hfields">
+			
+			<div id="quick-reports">
+				<a href="">Last Year</a>
+				<a href="">Last 6 Months</a>
+				<a href="" class="active">Last Quarter</a>
+				<a href="">Last Month</a>
+				<a href="">Last 2 Weeks</a>
+				<a href="">All Time</a>
+			</Div>
+			<input type="date" placeholder="Start Date (mm/dd/yy)" id="hfields">	
+			<input type="date" placeholder="End Date (mm/dd/yy)" id="hfields">
 			<select name="project" id="hfields">
 				<option>All</option>
 				<option>Project 1</option>
 				<option>Project 2</option>
 			</select>
-			<input type="button" id="hfields" value="Filter Options" onclick="filters()">
+<!-- 			<input type="button" id="hfields" value="Filter Options" onclick="filters()"> -->
 			<input type="submit" id="hfields">
 	</Div>
 	<div id="content">
