@@ -2,12 +2,13 @@
 	<head>
 		<title>Visualizer Dashboard</title>
 		<link rel="stylesheet" type="text/css" href="css/desktop.css">
-		<script src="scripts/chart/Chart.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7/prototype.js"></script>
+		<script src="http://code.highcharts.com/adapters/prototype-adapter.js"></script>
+		<script src="http://code.highcharts.com/highcharts.js"></script>
 	</head>
 <body>
 <center>
 	<div id="header">
-
 			<input type="date" placeholder="Start Date" id="hfields">	
 			<input type="date" placeholder="End Date" id="hfields">
 			<select name="project" id="hfields">
@@ -15,117 +16,196 @@
 				<option>Project 1</option>
 				<option>Project 2</option>
 			</select>
-			<input type="button" id="hfields" value="Filter Options">
+			<input type="button" id="hfields" value="Filter Options" onclick="filters()">
 			<input type="submit" id="hfields">
-
 	</Div>
 	<div id="content">
 		<div id="trendline">
-
+			<div id="tchartarea" style="width:800px; height:200px;"></div>
 		</div>
-		<br>
 		<div Id="bottom-charts" class="flexcontainer">
 			<div id="left-chart">
-				<select name="lchart" id="hfields">
+	<!-- 				<select name="lchart" id="hfields">
+						<option>Chart 1</option>
+						<option>Chart 2</option>
+						<option>Chart 3</option>
+					</select> -->
+				
+				<div id="lchartarea" style="width:600px; height:400px;"></div>
+				</div>
+				<div id="right-chart">
+	<!-- 			<select name="rchart" id="hfields">
 					<option>Chart 1</option>
 					<option>Chart 2</option>
 					<option>Chart 3</option>
-				</select>
-				<br>
-	<script>
-
-		var pieData = [
-				{
-					value: 300,
-					color:"#F7464A",
-					highlight: "#FF5A5E",
-					label: "Red"
-				},
-				{
-					value: 50,
-					color: "#46BFBD",
-					highlight: "#5AD3D1",
-					label: "Green"
-				},
-				{
-					value: 100,
-					color: "#FDB45C",
-					highlight: "#FFC870",
-					label: "Yellow"
-				},
-				{
-					value: 40,
-					color: "#949FB1",
-					highlight: "#A8B3C5",
-					label: "Grey"
-				},
-				{
-					value: 120,
-					color: "#4D5360",
-					highlight: "#616774",
-					label: "Dark Grey"
-				}
-
-			];
-
-			window.onload = function(){
-				var ctx = document.getElementById("chart-area").getContext("2d");
-				window.myPie = new Chart(ctx).Pie(pieData);
-			};
-
-
-
-	</script>
+				</select> -->				
+				
+				<div id="rchartarea" style="width:600; height:400px;"></div>
+			
 			</div>
-			<div id="right-chart">
-			<select name="rchart" id="hfields">
-				<option>Chart 1</option>
-				<option>Chart 2</option>
-				<option>Chart 3</option>
-			</select>				
-			<br>
-				<script>
 
-					var pieData = [
-							{
-								value: 300,
-								color:"#F7464A",
-								highlight: "#FF5A5E",
-								label: "Red"
-							},
-							{
-								value: 50,
-								color: "#46BFBD",
-								highlight: "#5AD3D1",
-								label: "Green"
-							},
-							{
-								value: 100,
-								color: "#FDB45C",
-								highlight: "#FFC870",
-								label: "Yellow"
-							},
-							{
-								value: 40,
-								color: "#949FB1",
-								highlight: "#A8B3C5",
-								label: "Grey"
-							},
-							{
-								value: 120,
-								color: "#4D5360",
-								highlight: "#616774",
-								label: "Dark Grey"
-							}
-						];
-						window.onload = function(){
-							var ctx = document.getElementById("chart-area").getContext("2d");
-							window.myPie = new Chart(ctx).Pie(pieData);
-						};
-					</script>			
-			</div>
 		</div>
 	</Div>
 </center>
+
+
+<!-- CHART SCRIPTS -->
+<script type="text/javascript">
+document.observe("dom:loaded", function() {
+   var chart1 = new Highcharts.Chart({
+	  chart: {
+		 renderTo: 'tchartarea',
+		 type: 'spline'
+		},
+		title: {
+			text: 'Fruit Consumption'
+		},
+		tooltip: {
+			pointFormat: '{series.name}: <b>{point.y}</b>'
+		},
+		xAxis: {
+			categories: ['Apples', 'Bananas', 'Oranges']
+		},
+		yAxis: {
+			title: {
+				text: 'Fruit eaten'
+			}
+		},
+		series: [{
+			name: 'Jane',
+			data: [1, 0, 4]
+		}, {
+			name: 'John',
+			data: [5, 7, 3]
+		}]
+	});
+
+});
+
+document.observe("dom:loaded", function() {
+   var chart1 = new Highcharts.Chart({
+	  chart: {
+		renderTo: 'lchartarea',
+		type: 'bar',
+		backgroundColor: '#89B640',
+		borderColor: '#339900',
+		borderRadius: "10",
+		borderWidth: '0',
+		margin: [40],
+		padding: [40],
+			style: {
+				color: "#fff"
+			},
+		},
+		legend: {
+			itemStyle: {
+				color: '#fff',
+				fontWeight: 'bold'
+			}
+		},
+		title: {
+			text: 'Fruit Consumption', style: {color: "#ffffff"}
+		},
+		tooltip: {
+			pointFormat: '{series.name}: <b>{point.y}</b>'
+		},
+		plotOptions: {
+			bar: {
+				allowPointSelect: false,
+				dataLabels: {
+					enabled: true,
+					color: '#ffffff'
+				}
+			}
+		},
+		labels: { 
+			style: {color: "#ffffff"},
+		},
+		xAxis: {
+			categories: ['Apples', 'Bananas', 'Oranges'],
+			gridLineWidth: 0,
+			lineColor: '#fff',
+			tickColor: '#fff',
+			labels: {
+				style: {
+					color: '#fff',
+				}
+		 	},
+		},
+		yAxis: {
+			title: {
+				text: 'Fruit eaten', 
+					style: {
+						color: "#ffffff"
+					}
+			},
+			lineColor: '#fff',
+			tickColor: '#fff',
+			labels: {
+				style: {
+					color: '#fff',
+				}
+			}
+		},
+		series: [{
+			name: 'Jane', 
+			data: [1, 0, 4]
+		}, {
+			name: 'John',
+			data: [5, 7, 3]
+		}]
+	});
+
+});
+
+
+ 
+
+document.observe("dom:loaded", function() {
+   var chart1 = new Highcharts.Chart({
+		chart: {
+			renderTo: 'rchartarea',
+			backgroundColor: '#89B640',
+			borderColor: '#339900',
+			borderRadius: "10",
+			borderWidth: '0',
+			margin: [40],
+			padding: [40],
+			plotShadow: false
+		},
+		title: {
+			text: 'Browser market shares at a specific website, 2014',  style: {color: "#ffffff"}
+		},
+		tooltip: {
+			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		},
+		plotOptions: {
+			pie: {
+				allowPointSelect: false,
+				dataLabels: {
+				color: '#ffffff'
+				}
+			}
+		},
+		series: [{
+			type: 'pie',
+			name: 'Browser share',
+			data: [
+				['Firefox',   45.0],
+				['IE',	   26.8],
+				['Chrome',	 12.8],
+				['Safari',	8.5],
+				['Opera',	 6.2],
+				['Others',   0.7]
+			]
+		}]
+	});
+
+});
+</script>
+<!-- CHART SCRIPTS -->
+<script>
+
+</script>
 </body>
 </html>
