@@ -5,6 +5,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7/prototype.js"></script>
 		<script src="http://code.highcharts.com/adapters/prototype-adapter.js"></script>
 		<script src="http://code.highcharts.com/highcharts.js"></script>
+		<script src="scripts/date/pikaday.js"></script>
 	</head>
 <body>
 <center>
@@ -18,16 +19,20 @@
 				<a href="">Last 2 Weeks</a>
 				<a href="">All Time</a>
 			</Div>
-			<input type="date" placeholder="Start Date (mm/dd/yy)" id="hfields">	
-			<input type="date" placeholder="End Date (mm/dd/yy)" id="hfields">
+			<div id="quick-filters">
+			<input type="date" placeholder="Start Date (mm/dd/yy)" id="start">	
+			<input type="date" placeholder="End Date (mm/dd/yy)"  id="end">
 			<select name="project" id="hfields">
 				<option>All</option>
 				<option>Project 1</option>
 				<option>Project 2</option>
 			</select>
 <!-- 			<input type="button" id="hfields" value="Filter Options" onclick="filters()"> -->
-			<input type="submit" id="hfields">
-	</Div>
+			</div>
+			<input type="submit" id="quick-submit">
+			<img src="http://fc06.deviantart.net/fs71/f/2013/094/c/8/rainbow_batman_texture_cape_by_texmoder-d5pokge.jpg" id="profile">
+	</div>
+</div>
 	<div id="content">
 		<div id="trendline">
 			<div id="tchartarea" style="width:800px; height:200px;"></div>
@@ -213,7 +218,12 @@ document.observe("dom:loaded", function() {
 });
 </script>
 <!-- CHART SCRIPTS -->
+    
 <script>
+document.observe("dom:loaded", function() {
+    var picker = new Pikaday({ field: document.getElementById('start') });
+   })
+</script>
 
 </script>
 </body>
