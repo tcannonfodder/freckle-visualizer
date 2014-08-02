@@ -2,6 +2,7 @@
 	<head>
 		<title>Visualizer Dashboard</title>
 		<link rel="stylesheet" type="text/css" href="css/desktop.css">
+		<link rel="stylesheet" type="text/css" href="css/pikaday.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7/prototype.js"></script>
 		<script src="http://code.highcharts.com/adapters/prototype-adapter.js"></script>
 		<script src="http://code.highcharts.com/highcharts.js"></script>
@@ -20,7 +21,7 @@
 				<a href="">All Time</a>
 			</Div>
 			<div id="quick-filters">
-			<input type="date" placeholder="Start Date (mm/dd/yy)" id="start">	
+			<input type="date" placeholder="Start Date (mm/dd/yy)" id="start">
 			<input type="date" placeholder="End Date (mm/dd/yy)"  id="end">
 			<select name="project" id="hfields">
 				<option>All</option>
@@ -220,9 +221,9 @@ document.observe("dom:loaded", function() {
 <!-- CHART SCRIPTS -->
     
 <script>
-document.observe("dom:loaded", function() {
+	document.observe("dom:loaded", function() {
     var picker = new Pikaday({ field: document.getElementById('start') });
-   })
+ 	})
 </script>
 
 </script>
