@@ -7,14 +7,14 @@ A simple application for visualizing your Freckle Data in some new and interesti
 ## The supported charts are:
 
 * Projections
-  * Average Billable/Unbillable per Day
-  * Average Billable/Unbillable per Month
+  * Average Billable/Unbillable per Day (Trend)
+  * Average Billable/Unbillable per Month (Trend)
 * "Hard Data"
-  * Billable/Unbillable per Month over Time
+  * Billable/Unbillable per Month over Time (Trend)
 * Comparisons
-  * Time logged per Project
-  * Time logged per Tag combination
-  * Unbillable/Billable time logged
+  * Time logged per Project (Polar/Pie)
+  * Time logged per Tag combination (Polar/Pie)
+  * Unbillable/Billable time logged (Polar/Pie)
 
 
 
