@@ -83,12 +83,13 @@ body
 #quick-reports a:last-child
 {
 	border-right: 0px solid #bfbfbf;
-		-webkit-border-top-right-radius: 10px;
-		-webkit-border-bottom-right-radius: 10px;
-		-moz-border-radius-topright: 10px;
-		-moz-border-radius-bottomright: 10px;
-		border-top-right-radius: 10px;
-		border-bottom-right-radius: 10px;
+		-webkit-border-top-right-radius: 25px;
+		-webkit-border-bottom-right-radius: 25px;
+		-moz-border-radius-topright: 25px;
+		-moz-border-radius-bottomright: 25px;
+		border-top-right-radius: 25px;
+		border-bottom-right-radius: 25px;
+	position:relative;z-index:910;
 			
 }
 
@@ -97,6 +98,28 @@ body
 	display: inline-block;
 	font-size: 0;
 	vertical-align: middle;
+}
+
+#quick-filters:first-child
+{
+	display: inline-block;
+	font-size: 0;
+	vertical-align: middle;
+	padding-left: 30px;
+	width:170px;
+}
+
+#int-radius
+{
+    width:50px;
+    height:40px;
+    margin-right: -35px;
+    background-color: #3cc5de;
+    border-radius: 25px;
+	display: inline-block;
+	vertical-align: middle;
+	position:relative;z-index:900;
+	margin-left: -40px;
 }
 
 #quick-filters input
@@ -115,10 +138,34 @@ body
 	color:#EA4C7D;
     text-decoration: none;
     display:inline-block;
+    width:149px;
 
 }
 
-#quick-filters select:hover
+#quick-filters input:first-child
+{
+    width:180px;
+
+}
+
+#quick-filters input#end
+{
+	border-top: 0px solid;
+	border-bottom: 3px solid;
+	border-right: 0px solid;
+		border-bottom-color: #bfbfbf;
+   	border-right: 0px solid #bfbfbf;
+		-webkit-border-top-right-radius: 25px;
+		-webkit-border-bottom-right-radius: 25px;
+		-moz-border-radius-topright: 25px;
+		-moz-border-radius-bottomright: 25px;
+		border-top-right-radius: 25px;
+		border-bottom-right-radius: 25px;
+	position:relative;z-index:910;
+
+}
+
+/*#quick-filters select:hover
 {
     background-color: #dddddd;
     color: #EA4C7D;
@@ -154,7 +201,7 @@ body
 		border-bottom-right-radius: 10px;
 	margin-left: 0;
 	padding-right: 6px;			
-}
+}*/
 
 #quick-filters input:hover
 {
@@ -177,7 +224,7 @@ body
 		-moz-border-radius-bottomleft: 10px;
 		border-top-left-radius: 10px;
 		border-bottom-left-radius: 10px;
-	margin-left: 40px;
+	padding-left: 40px;
 	
 }
 
@@ -189,11 +236,10 @@ body
 	padding: 6px;
 
 	background-color:#fdffff;
-	margin-left: 0;
+	padding-left: 40;
 	font-size: 18px;
 	color:#EA4C7D;
     text-decoration: none;
-	margin-left: 0;
 	vertical-align: middle;
 }
 

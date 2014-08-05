@@ -11,9 +11,11 @@
     position: relative;
     color: #333;
     background: #fff;
-    border: 1px solid #ccc;
-    border-bottom-color: #bbb;
+    border: 2px solid #EA4C7D;
+    border-bottom-color: #fa4C7D;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-left: 0px;
+
 }
 
 /*
@@ -130,6 +132,7 @@ http://nicolasgallagher.com/micro-clearfix-hack/
     border-collapse: collapse;
     border-spacing: 0;
     border: 0;
+
 }
 
 .pika-table th,
@@ -155,15 +158,35 @@ http://nicolasgallagher.com/micro-clearfix-hack/
     width: 100%;
     padding: 5px;
     color: #666;
-    font-size: 12px;
+    color: inherit;
+    font-size: inherit;
     line-height: 15px;
     text-align: right;
     background: #f5f5f5;
+    background:inherit;
 }
 
 .pika-week {
     font-size: 11px;
     color: #999;
+}
+.pika-table tr:hover
+{
+    font-size: 16px;
+    color: #fff;
+    background:#3cc5de;
+    border-radius: inherit;
+}
+
+.pika-table thead tr:hover
+{
+    background-color: inherit;
+}
+
+.pika-table 
+{
+    border-radius: 5px;
+    font-size: 12px;
 }
 
 .is-today .pika-button {
@@ -174,8 +197,8 @@ http://nicolasgallagher.com/micro-clearfix-hack/
 .is-selected .pika-button {
     color: #fff;
     font-weight: bold;
-    background: #33aaff;
-    box-shadow: inset 0 1px 3px #178fe5;
+    background: #EA4C7D;
+    box-shadow: inset 0 1px 3px #AA4C7D;
     border-radius: 3px;
 }
 
@@ -187,8 +210,12 @@ http://nicolasgallagher.com/micro-clearfix-hack/
 }
 
 .pika-button:hover {
-    color: #fff !important;
-    background: #ff8000 !important;
+    color: #EA4C7D !important;
+    background: #fff !important;
     box-shadow: none !important;
     border-radius: 3px !important;
+    border: 3px solid #EA4C7D !important;
+    box-sizing:border-box !important;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
 }
