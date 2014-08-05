@@ -8,6 +8,7 @@
 		<script src="http://code.highcharts.com/highcharts.js"></script>
 		<script src="scripts/date/moment.min.js"></script>
 		<script src="scripts/date/pikaday.js"></script>
+		<script src="scripts/charting.js"></script>
 	</head>
 <body>
 <center>
@@ -39,7 +40,7 @@
 </div>
 	<div id="content">
 		<div id="trendline">
-			<div id="tchartarea" style="width:800px; height:200px;"></div>
+			<div id="avg_per_day" style="width:800px; height:200px;"></div>
 		</div>
 		<div Id="bottom-charts" class="flexcontainer">
 			<div id="left-chart">
@@ -70,34 +71,16 @@
 <!-- CHART SCRIPTS -->
 <script type="text/javascript">
 document.observe("dom:loaded", function() {
-   var chart1 = new Highcharts.Chart({
-	  chart: {
-		 renderTo: 'tchartarea',
-		 type: 'spline'
-		},
-		title: {
-			text: 'Fruit Consumption'
-		},
-		tooltip: {
-			pointFormat: '{series.name}: <b>{point.y}</b>'
-		},
-		xAxis: {
-			categories: ['Apples', 'Bananas', 'Oranges']
-		},
-		yAxis: {
-			title: {
-				text: 'Fruit eaten'
-			}
-		},
-		series: [{
-			name: 'Jane',
-			data: [1, 0, 4]
+	var charting = new Charting()
+	charting.renderDailyChart(
+		[{
+			name: 'Billable', 
+			data: [1, 0, 4, 15, 5 , 4, 1]
 		}, {
-			name: 'John',
-			data: [5, 7, 3]
+			name: 'Unbillable',
+			data: [5, 7, 3, 6, 12, 5, 2]
 		}]
-	});
-
+	)
 });
 
 document.observe("dom:loaded", function() {
