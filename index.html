@@ -39,32 +39,31 @@
 	</div>
 </div>
 	<div id="content">
-		<div id="trendline">
+		<div id="trendlines">
 			<div id="avg_per_day" style="width:800px; height:200px;"></div>
+			<div id="avg_per_month" style="width:800px; height:200px;"></div>
+			<div id="logged_per_month_over_time" style="width:800px; height:200px;"></div>
 		</div>
 		<div Id="bottom-charts" class="flexcontainer">
 			<div id="left-chart">
-	<!-- 				<select name="lchart" id="hfields">
-						<option>Chart 1</option>
-						<option>Chart 2</option>
-						<option>Chart 3</option>
-					</select> -->
 				
-				<div id="lchartarea" style="width:600px; height:400px;"></div>
-				</div>
-				<div id="right-chart">
-	<!-- 			<select name="rchart" id="hfields">
-					<option>Chart 1</option>
-					<option>Chart 2</option>
-					<option>Chart 3</option>
-				</select> -->				
+				<div id="logged_per_tag_combo" style="width:600px; height:400px;"></div>
 				
-				<div id="rchartarea" style="width:600; height:400px;"></div>
+			</div>
+			<div id="right-chart">
+
+				<div id="type_time_logged" style="width:600; height:400px;"></div>
 			
 			</div>
-
 		</div>
-	</Div>
+		<div Id="bottom-charts" class="flexcontainer">
+			<div id="middle-chart">
+				
+				<div id="billable_unbillable" style="width:600px; height:400px;"></div>
+				
+			</div>
+		</div>
+		</div>
 </center>
 
 
@@ -80,131 +79,65 @@ document.observe("dom:loaded", function() {
 			name: 'Unbillable',
 			data: [5, 7, 3, 6, 12, 5, 2]
 		}]
+	),
+
+	charting.renderMonthlyChart(
+		[{
+			name: 'Billable', 
+			data: [105, 60, 54, 115, 95, 104, 111, 54, 115, 95,105, 60]
+		}, {
+			name: 'Unbillable',
+			data: [95, 117, 93, 86, 72, 85, 62, 86, 95, 117, 93, 62]
+		}]
+	),
+
+	charting.renderLoggedPerMonthChart(
+		[{
+			name: 'Billable', 
+			data: [105, 60, 54]
+		}, {
+			name: 'Unbillable',
+			data: [95, 117, 93]
+		}]
 	)
 
-	var perMonthOverTimeData = { "June 2014" : 200, "July 2014": 150, "August 2014" : 300 }
-
-});
-
-document.observe("dom:loaded", function() {
-   var chart1 = new Highcharts.Chart({
-	  chart: {
-		renderTo: 'lchartarea',
-		type: 'bar',
-		backgroundColor: '#89B640',
-		borderColor: '#339900',
-		borderRadius: "10",
-		borderWidth: '0',
-		margin: [40],
-		padding: [40],
-			style: {
-				color: "#fff"
-			},
-		},
-		legend: {
-			itemStyle: {
-				color: '#fff',
-				fontWeight: 'bold'
-			}
-		},
-		title: {
-			text: 'Fruit Consumption', style: {color: "#ffffff"}
-		},
-		tooltip: {
-			pointFormat: '{series.name}: <b>{point.y}</b>'
-		},
-		plotOptions: {
-			bar: {
-				allowPointSelect: false,
-				dataLabels: {
-					enabled: true,
-					color: '#ffffff'
-				}
-			}
-		},
-		labels: { 
-			style: {color: "#ffffff"},
-		},
-		xAxis: {
-			categories: ['Apples', 'Bananas', 'Oranges'],
-			gridLineWidth: 0,
-			lineColor: '#fff',
-			tickColor: '#fff',
-			labels: {
-				style: {
-					color: '#fff',
-				}
-		 	},
-		},
-		yAxis: {
-			title: {
-				text: 'Fruit eaten', 
-					style: {
-						color: "#ffffff"
-					}
-			},
-			lineColor: '#fff',
-			tickColor: '#fff',
-			labels: {
-				style: {
-					color: '#fff',
-				}
-			}
-		},
-		series: [{
-			name: 'Jane', 
-			data: [1, 0, 4]
-		}, {
-			name: 'John',
-			data: [5, 7, 3]
-		}]
-	});
-
-});
-
-
- 
-
-document.observe("dom:loaded", function() {
-   var chart1 = new Highcharts.Chart({
-		chart: {
-			renderTo: 'rchartarea',
-			backgroundColor: '#89B640',
-			borderColor: '#339900',
-			borderRadius: "10",
-			borderWidth: '0',
-			margin: [40],
-			padding: [40],
-			plotShadow: false
-		},
-		title: {
-			text: 'Browser market shares at a specific website, 2014',  style: {color: "#ffffff"}
-		},
-		tooltip: {
-			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-		},
-		plotOptions: {
-			pie: {
-				allowPointSelect: false,
-				dataLabels: {
-				color: '#ffffff'
-				}
-			}
-		},
-		series: [{
+	charting.renderloggedPerTagCombo(
+		[{
 			type: 'pie',
-			name: 'Browser share',
+			name: 'Tag Combonations',
 			data: [
-				['Firefox',   45.0],
-				['IE',	   26.8],
-				['Chrome',	 12.8],
-				['Safari',	8.5],
-				['Opera',	 6.2],
-				['Others',   0.7]
+				['Frontend',   25.0],
+				['Backend',	   66.8],
+				['Bug Support',	 22.8],
+				['Frontend+Bug Support',	18.5],
+				['Backend+Bug Support',	 16.2],
+				['Frontend+Backend',   35.7]
 			]
 		}]
-	});
+	)
 
+	charting.renderProjectChart(
+		[{
+			type: 'pie',
+			name: 'Pojects',
+			data: [
+				['Project 1',   225.0],
+				['Project 2',	   166.8],
+				['Project 3',	 122.8]
+			]
+		}]
+	)
+
+	charting.renderBillableChart(
+			[{
+			type: 'pie',
+			name: 'Time Type',
+			data: [
+				['Billable',   25.0],
+				['Unbillable',	   66.8]
+			]
+		}]
+	)
 });
 </script>
 

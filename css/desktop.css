@@ -284,7 +284,23 @@ body
 
 }
 
-#lchartarea
+#logged_per_tag_combo
+{
+	width: 100%;
+	/*margin:10px;*/
+}
+
+#middle-chart
+{
+	background: #AED141;
+	width: auto;
+	margin:10px;
+	border-radius: 10px;
+	padding: 10px;
+
+}
+
+#billable_unbillable
 {
 	width: 100%;
 	/*margin:10px;*/
@@ -301,11 +317,14 @@ body
 
 }
 
-#rchartarea
+#type_time_logged
 {
 	width: 100%;
 	/*margin:10px;*/
 }
+
+
+
 #bottom-charts.flexcontainer {
    display: -webkit-flex;
    display: flex;
